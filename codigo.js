@@ -151,29 +151,28 @@ $(function () {
         if (_status == 'OK') {
             $('#msg')
                 .removeClass('ng')
-                .html('You did it.')
+                .html('&#161;&#161;Lo habéis conseguido!!')
                 .stop(true, false)
                 .fadeIn(250)
-                .delay(500)
+                .delay(1000)
                 .fadeOut(300);
         } else if (_status == 'RESETED') {
             $('#msg')
                 .removeClass('ng')
-                .html('I did, sir.')
+                .html('Contraseña reiniciada.')
                 .stop(true, false)
                 .fadeIn(250)
-                .delay(500)
+                .delay(1000)
                 .fadeOut(300);
         } else if (_status == 'NG') {
             $('#msg')
                 .addClass('ng')
-                .html('Are you sure ?')
+                .html('¿Estás seguro de eso?')
                 .stop(true, false)
                 .fadeIn(250)
-                .delay(500)
+                .delay(1000)
                 .fadeOut(300);
         }
     }
-
 
 });
