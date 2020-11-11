@@ -1,0 +1,245 @@
+
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,500);
+
+/* ---------------------------- */
+/* RESET */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+     margin:0;
+     padding:0;
+     border:0;
+     outline:0;
+     font-size:100%;
+     vertical-align:baseline;
+     background-color:transparent;
+}
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/* ---------------------------- */
+/* DIALS */
+
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	position: relative;
+	font-family: 'Source Code Pro', monospace;
+	background: -webkit-gradient(linear, left top, left bottom, from(#202020), to(#191919));
+	color: #555;
+	margin: 0;
+	padding: 0;
+}
+
+#dials{
+	position: absolute;
+	display: block;
+	width: 720px;
+	height: 180px;
+	top: 50%;
+	left: 50%;
+	margin: -120px 0 0 -360px;
+}
+
+.dial{
+	position: relative;
+	display: block;
+	width: 140px;
+	height: 140px;
+	padding: 20px;
+	float: left;
+}
+
+.dial .numset{
+	display: block;
+	position: relative;
+	width: 140px;
+	height: 140px;
+	-webkit-border-radius: 50% 50%;
+}
+
+.dial .numset li{
+	position: absolute;
+	top: 0;
+	left: 55px;
+	display:block;
+	width: 30px;
+	height: 70px;
+	cursor: pointer;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.0em;
+	text-shadow: 1px 1px 1px #000;
+	text-shadow: -1px -1px 1px #000;
+	-webkit-transform-origin: bottom center;
+	-webkit-transition: color 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+}
+
+.dial .numset li:after{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 20px;
+	background-color: #262626;
+	margin: 9px 0 0 15px;
+}
+
+.dial .numset li.on{ color: #DDD; }
+.dial .numset li:hover{ color: #DDD; }
+.dial .rot0 { -webkit-transform: rotate(0deg); }
+.dial .rot1 { -webkit-transform: rotate(36deg); }
+.dial .rot2 { -webkit-transform: rotate(72deg); }
+.dial .rot3 { -webkit-transform: rotate(108deg); }
+.dial .rot4 { -webkit-transform: rotate(144deg); }
+.dial .rot5 { -webkit-transform: rotate(180deg); }
+.dial .rot6 { -webkit-transform: rotate(216deg); }
+.dial .rot7 { -webkit-transform: rotate(252deg); }
+.dial .rot8 { -webkit-transform: rotate(288deg); }
+.dial .rot9 { -webkit-transform: rotate(324deg); }
+
+.dial .knob{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+	margin: -40px 0 0 -40px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#141414), to(#191919));
+	-webkit-border-radius: 50% 50%;
+	-webkit-box-shadow: 0px 5px 4px #050505;
+}
+
+.dial .knob .line{
+	display: block;
+	width: 2px;
+	height: 40px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F27A8C), to(#773322));
+	margin: 0px 0 0 39px;
+	opacity: 0.80;
+	-webkit-transform-origin: bottom center;
+	-webkit-transition: all 400ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.dial.off .knob .line{
+	background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#262626));
+}
+
+
+#ph0,
+#ph1,
+#ph2{
+	margin: 90px 0 0 -330px;
+	width: 660px;
+	height: 38px;
+}
+
+#ph0{ display: block; }
+#ph1{ display: none; }
+#ph2{ display: none; }
+
+.note{
+	display: block;
+	float: left;
+	height: 38px;
+	margin-left: 23px;
+	color: #555;
+	font-family: Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: italic;
+	letter-spacing: 1px;
+	line-height: 39px;
+}
+
+.btns{
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+}
+
+.btns a{
+	display: block;
+	height: 38px;
+	color: #444;
+	font-size: 12px;
+	line-height: 38px;
+	text-indent: 2px;
+	text-align: center;
+	color: #BBB;
+	cursor: pointer;
+	padding: 0 0 0 15px;
+	-webkit-transition: color 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+.btns #btn-register a:hover{ color: #88EEEE; }
+.btns #btn-lock a:hover{ color: #F27A8C; }
+.btns #btn-open a:hover{ color: #F4CD85; }
+.btns #btn-reset a:hover{ color: #E2804B; }
+
+
+.btns #btn-lock,
+.btns #btn-open,
+.btns #btn-reset,
+.btns #btn-register{ float: right; }
+
+.btns #btn-lock { letter-spacing: 2px; }
+.btns #btn-open { letter-spacing: 2px; }
+.btns #btn-reset{ letter-spacing: 2px; }
+.btns #btn-register{ letter-spacing: 1px; }
+
+#light{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: 103px 0 0 -330px;
+	width: 12px;
+	height: 12px;
+	background-color: #88EEEE;
+	-webkit-border-radius: 5%;
+	-webkit-box-shadow: 1px 1px 2px #191919 inset;
+}
+
+#light.lock{
+	background-color: #FFCC00;
+}
+
+#msg{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -80px;
+	display: none;
+	width: 160px;
+	height: 40px;
+	color: #191919;
+	font-size: 13px;
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+	background-color: #88EEEE;
+	-webkit-border-radius: 3px;
+}
+
+#msg.ng{
+	background-color: #FFCC00;
+}
